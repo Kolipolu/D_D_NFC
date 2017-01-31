@@ -15,34 +15,65 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imgLogoDD"
+                android:src="@drawable/dd_logo" />
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgLogoNFC"
+                android:src="@drawable/nfc_logo"/>
+        </LinearLayout>
+
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Créer un personnage"
-            android:id="@+id/btnCreerPersonnage" />
+            android:id="@+id/btnCreerPersonnage"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:onClick="btnCreerPersonnageOnClick"/>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Lire un personnage"
-            android:id="@+id/btnLirePersonnage" />
+            android:id="@+id/btnLirePersonnage"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@android:color/holo_red_light" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Supprimer un personnage"
-            android:id="@+id/btnSupprimerPersonnage" />
+            android:id="@+id/btnSupprimerPersonnage"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@android:color/holo_red_light" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Lire un PNJ"
-            android:id="@+id/btnLirePNJ" />
+            android:id="@+id/btnLirePNJ"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@android:color/holo_red_light" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Lire un monstre"
-            android:id="@+id/btnLireMonstre" />
+            android:id="@+id/btnLireMonstre"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@android:color/holo_red_light" />
+
     </LinearLayout>
 </RelativeLayout>
