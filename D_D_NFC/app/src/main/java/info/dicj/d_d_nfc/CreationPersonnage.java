@@ -81,6 +81,8 @@ public class CreationPersonnage extends Activity implements INFCEcriture{
 
                 writeNdefMessage(tag, ndefMessage);
             }
+
+            ecriture = false;
         }
     }
 
@@ -190,7 +192,8 @@ public class CreationPersonnage extends Activity implements INFCEcriture{
     }
 
 
-    public void btnEcritureOnClick(View v) {
+    public void btnSavePersoOnClick(View v) {
         ecriture = true;
+        Toast.makeText(this, "Enregistrer le personnage sur la puce!", Toast.LENGTH_LONG).show();
     }
 }
