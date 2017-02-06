@@ -1,8 +1,9 @@
 package info.dicj.d_d_nfc;
 
-
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.nfc.NdefMessage;
@@ -14,45 +15,49 @@ import android.nfc.tech.NdefFormatable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Locale;
 
-public class CreationPersonnage extends Activity implements INFCEcriture{
+public class SupprimerPersonnage extends Activity implements INFCEcriture {
 
     NfcAdapter nfcAdapter;
-    EditText edTxtNom, edTxtAge, edTxtTaille, edTxtPoids;
-    ToggleButton tglSexe;
-    Boolean ecriture = false;
-    String Sexe = "";
-    TextView txtRaceClasse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.creation_personnage);
-
+        setContentView(R.layout.supprimer_perssonnage);
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
-        edTxtNom = (EditText)findViewById(R.id.edTextNom);
-        edTxtAge = (EditText)findViewById(R.id.edTxtAge);
-        edTxtTaille = (EditText)findViewById(R.id.edTxtTaille);
-        edTxtPoids = (EditText)findViewById(R.id.edTxtPoids);
-        txtRaceClasse = (TextView)findViewById(R.id.edTxtRaceClasse);
-        tglSexe = (ToggleButton)findViewById(R.id.tglSexe);
-
-
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+    public void btnSupprimerPersoOnClick(View v) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        enableForegroundDispatchSystem();
+        builder.setTitle("Suppression");
+        builder.setMessage("Êtes-vous sur de vouloir supprimer ce personnage?");
+
+        builder.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                enableForegroundDispatchSystem();
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNegativeButton("Non", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     @Override
@@ -66,25 +71,18 @@ public class CreationPersonnage extends Activity implements INFCEcriture{
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
 
-        if(ecriture == true){
-            if(intent.hasExtra(NfcAdapter.EXTRA_TAG)){
-                Toast.makeText(this, "Écriture en cours...", Toast.LENGTH_LONG).show();
+
+        if(intent.hasExtra(NfcAdapter.EXTRA_TAG)) {
+            Toast.makeText(this, "Suppression en cours...", Toast.LENGTH_LONG).show();
 
 
-                Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+            Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
 
-                if(tglSexe.isChecked()) {
-                    Sexe = "M";
-                }else {
-                    Sexe = "F";
-                }
+            NdefMessage ndefMessage = createNdefMessage("X");
 
-                NdefMessage ndefMessage = createNdefMessage(edTxtNom.getText() + "." + edTxtAge.getText() + "." + edTxtTaille.getText() + "." + edTxtPoids.getText() + "." + Sexe + "." + txtRaceClasse.getText());
+            writeNdefMessage(tag, ndefMessage);
 
-                writeNdefMessage(tag, ndefMessage);
-            }
 
-            ecriture = false;
         }
     }
 
@@ -97,13 +95,15 @@ public class CreationPersonnage extends Activity implements INFCEcriture{
     @Override
     public void enableForegroundDispatchSystem() {
 
-        Intent intent = new Intent(CreationPersonnage.this, CreationPersonnage.class).addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
+        Intent intent = new Intent(SupprimerPersonnage.this, SupprimerPersonnage.class).addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
         IntentFilter[] intentFilters = new IntentFilter[]{};
 
-        nfcAdapter.enableForegroundDispatch(CreationPersonnage.this, pendingIntent, intentFilters, null);
+        nfcAdapter.enableForegroundDispatch(SupprimerPersonnage.this, pendingIntent, intentFilters, null);
+
+        Toast.makeText(this, "Veuillez poser le téléphone sur la puce!", Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -132,7 +132,7 @@ public class CreationPersonnage extends Activity implements INFCEcriture{
 
         try{
             if(tag == null){
-                Toast.makeText(this, "Tag cannot be null", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Tag ne peut êre null", Toast.LENGTH_LONG).show();
                 return;
             }
 
@@ -144,14 +144,14 @@ public class CreationPersonnage extends Activity implements INFCEcriture{
                 ndef.connect();
 
                 if(!ndef.isWritable()){
-                    Toast.makeText(this, "Tag not writable", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Le tag ne peut être écrit", Toast.LENGTH_LONG).show();
                     ndef.close();
                     return;
                 }
 
                 ndef.writeNdefMessage(ndefMessage);
                 ndef.close();
-                Toast.makeText(this, "Personnage sauvegardé!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Personnage supprimé!", Toast.LENGTH_LONG).show();
 
             }
 
@@ -159,6 +159,7 @@ public class CreationPersonnage extends Activity implements INFCEcriture{
         }catch (Exception e){
             Log.e("WrireTag", e.getMessage());
         }
+
     }
 
     @Override
@@ -191,11 +192,5 @@ public class CreationPersonnage extends Activity implements INFCEcriture{
         NdefMessage ndefMessage = new NdefMessage(new NdefRecord[]{ ndefRecord });
 
         return ndefMessage;
-    }
-
-
-    public void btnSavePersoOnClick(View v) {
-        ecriture = true;
-        Toast.makeText(this, "Enregistrer le personnage sur la puce!", Toast.LENGTH_LONG).show();
     }
 }

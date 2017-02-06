@@ -18,4 +18,10 @@ public class MainActivity extends Activity {
         Intent creationIntent = new Intent(MainActivity.this, CreationPersonnage.class);
         startActivity(creationIntent);
     }
+
+    public void btnSupprimerOnClick(View v){
+
+        Intent SuppressionIntent = new Intent(MainActivity.this, SupprimerPersonnage.class);
+        startActivity(SuppressionIntent);
+    }
 }

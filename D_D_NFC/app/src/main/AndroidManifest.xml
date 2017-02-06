@@ -25,6 +25,10 @@
         <activity android:name=".CreationPersonnage">
 
         </activity>
+
+        <activity android:name=".SupprimerPersonnage">
+
+        </activity>
     </application>
 
 </manifest>
