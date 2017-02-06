@@ -21,7 +21,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Locale;
 
-public class SupprimerPersonnage extends Activity implements INFCEcriture {
+public class SupprimerPersonnage extends Activity implements INFCEcriture, INFC {
 
     NfcAdapter nfcAdapter;
 

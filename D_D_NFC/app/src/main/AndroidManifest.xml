@@ -29,6 +29,10 @@
         <activity android:name=".SupprimerPersonnage">
 
         </activity>
+
+        <activity android:name=".LirePersonnage">
+
+        </activity>
     </application>
 
 </manifest>

@@ -19,9 +19,23 @@ public class MainActivity extends Activity {
         startActivity(creationIntent);
     }
 
+    public void btnLirePerso(View v){
+
+        Intent lireIntent = new Intent(MainActivity.this, LirePersonnage.class);
+        startActivity(lireIntent);
+    }
+
     public void btnSupprimerOnClick(View v){
 
         Intent SuppressionIntent = new Intent(MainActivity.this, SupprimerPersonnage.class);
         startActivity(SuppressionIntent);
+    }
+
+    public void btnLirePNJ(View v){
+
+    }
+
+    public void btnLireMonstre(View v){
+
     }
 }

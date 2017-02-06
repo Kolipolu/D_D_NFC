@@ -49,7 +49,8 @@
             android:text="Lire un personnage"
             android:id="@+id/btnLirePersonnage"
             android:layout_marginTop="25dp"
-            android:backgroundTint="@android:color/holo_red_light" />
+            android:backgroundTint="@android:color/holo_red_light"
+            android:onClick="btnLirePerso"/>
 
         <Button
             android:layout_width="match_parent"

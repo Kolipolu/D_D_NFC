@@ -23,7 +23,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Locale;
 
-public class CreationPersonnage extends Activity implements INFCEcriture{
+public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
 
     NfcAdapter nfcAdapter;
     EditText edTxtNom, edTxtAge, edTxtTaille, edTxtPoids;
