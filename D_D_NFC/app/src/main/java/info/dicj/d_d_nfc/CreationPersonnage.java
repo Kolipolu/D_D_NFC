@@ -79,7 +79,7 @@ public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
                     Sexe = "F";
                 }
 
-                NdefMessage ndefMessage = createNdefMessage(edTxtNom.getText() + "." + edTxtAge.getText() + "." + edTxtTaille.getText() + "." + edTxtPoids.getText() + "." + Sexe + "." + txtRaceClasse.getText());
+                NdefMessage ndefMessage = createNdefMessage(edTxtNom.getText() + "," + edTxtAge.getText() + "," + edTxtTaille.getText() + "," + edTxtPoids.getText() + "," + Sexe + "," + txtRaceClasse.getText());
 
                 writeNdefMessage(tag, ndefMessage);
             }
