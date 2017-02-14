@@ -26,11 +26,9 @@ import java.util.Locale;
 public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
 
     NfcAdapter nfcAdapter;
-    EditText edTxtNom, edTxtAge, edTxtTaille, edTxtPoids;
-    ToggleButton tglSexe;
     Boolean ecriture = false;
     String Sexe = "";
-    TextView txtRaceClasse;
+    ToggleButton tglSexe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +36,6 @@ public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
         setContentView(R.layout.creation_personnage);
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
-        edTxtNom = (EditText)findViewById(R.id.edTextNom);
-        edTxtAge = (EditText)findViewById(R.id.edTxtAge);
-        edTxtTaille = (EditText)findViewById(R.id.edTxtTaille);
-        edTxtPoids = (EditText)findViewById(R.id.edTxtPoids);
-        txtRaceClasse = (TextView)findViewById(R.id.edTxtRaceClasse);
-        tglSexe = (ToggleButton)findViewById(R.id.tglSexe);
-
-
     }
 
     @Override
@@ -79,7 +69,7 @@ public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
                     Sexe = "F";
                 }
 
-                NdefMessage ndefMessage = createNdefMessage(edTxtNom.getText() + "," + edTxtAge.getText() + "," + edTxtTaille.getText() + "," + edTxtPoids.getText() + "," + Sexe + "," + txtRaceClasse.getText());
+                NdefMessage ndefMessage = createNdefMessage(creationContentTag());
 
                 writeNdefMessage(tag, ndefMessage);
             }
@@ -197,5 +187,55 @@ public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
     public void btnSavePersoOnClick(View v) {
         ecriture = true;
         Toast.makeText(this, "Enregistrer le personnage sur la puce!", Toast.LENGTH_LONG).show();
+    }
+
+    private String creationContentTag(){
+        String content;
+        EditText edTxtNom, edTxtAge, edTxtTaille, edTxtPoids, edTxtForce, edTxtIntelligence, edTxtPV, edTxtDex, edTxtSag, edTxtCon, edTxtCha;
+        EditText edTxtAttN1, edTxtAttA1, edTxtAttD1, edTxtAttM1,edTxtAttN2, edTxtAttA2, edTxtAttD2, edTxtAttM2,edTxtAttN3, edTxtAttA3, edTxtAttD3, edTxtAttM3,edTxtAttN4, edTxtAttA4, edTxtAttD4, edTxtAttM4, edTxtAttN5, edTxtAttA5, edTxtAttD5, edTxtAttM5;
+        TextView txtRaceClasse;
+
+        edTxtNom = (EditText)findViewById(R.id.edTextNom);
+        edTxtAge = (EditText)findViewById(R.id.edTxtAge);
+        edTxtTaille = (EditText)findViewById(R.id.edTxtTaille);
+        edTxtPoids = (EditText)findViewById(R.id.edTxtPoids);
+        txtRaceClasse = (TextView)findViewById(R.id.edTxtRaceClasse);
+        tglSexe = (ToggleButton)findViewById(R.id.tglSexe);
+        edTxtForce = (EditText)findViewById(R.id.edTxtForce);
+        edTxtIntelligence = (EditText)findViewById(R.id.edTxtIntelligence);
+        edTxtPV = (EditText)findViewById(R.id.edTxtPV);
+        edTxtDex = (EditText)findViewById(R.id.edTxtDexterite);
+        edTxtSag = (EditText)findViewById(R.id.edTxtSagesse);
+        edTxtCon = (EditText)findViewById(R.id.edTxtConstitution);
+        edTxtCha = (EditText)findViewById(R.id.edTxtCharisme);
+
+        edTxtAttN1 = (EditText)findViewById(R.id.edTxtAttNom1);
+        edTxtAttN2 = (EditText)findViewById(R.id.edTxtAttNom2);
+        edTxtAttN3 = (EditText)findViewById(R.id.edTxtAttNom3);
+        edTxtAttN4 = (EditText)findViewById(R.id.edTxtAttNom4);
+        edTxtAttN5 = (EditText)findViewById(R.id.edTxtAttNom5);
+
+        edTxtAttA1 = (EditText)findViewById(R.id.edTxtAttAtt1);
+        edTxtAttA2 = (EditText)findViewById(R.id.edTxtAttAtt2);
+        edTxtAttA3 = (EditText)findViewById(R.id.edTxtAttAtt3);
+        edTxtAttA4 = (EditText)findViewById(R.id.edTxtAttAtt4);
+        edTxtAttA5 = (EditText)findViewById(R.id.edTxtAttAtt5);
+
+        edTxtAttD1 = (EditText)findViewById(R.id.edTxtAttDom1);
+        edTxtAttD2 = (EditText)findViewById(R.id.edTxtAttDom2);
+        edTxtAttD3 = (EditText)findViewById(R.id.edTxtAttDom3);
+        edTxtAttD4 = (EditText)findViewById(R.id.edTxtAttDom4);
+        edTxtAttD5 = (EditText)findViewById(R.id.edTxtAttDom5);
+
+        edTxtAttM1 = (EditText)findViewById(R.id.edTxtAttMun1);
+        edTxtAttM2 = (EditText)findViewById(R.id.edTxtAttMun2);
+        edTxtAttM3 = (EditText)findViewById(R.id.edTxtAttMun3);
+        edTxtAttM4 = (EditText)findViewById(R.id.edTxtAttMun4);
+        edTxtAttM5 = (EditText)findViewById(R.id.edTxtAttMun5);
+
+
+        content = edTxtNom.getText() + "," + edTxtAge.getText() + "," + edTxtTaille.getText() + "," + edTxtPoids.getText() + "," + Sexe + "," + txtRaceClasse.getText();
+
+        return content;
     }
 }

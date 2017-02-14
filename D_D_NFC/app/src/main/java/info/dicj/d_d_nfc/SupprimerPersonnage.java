@@ -78,7 +78,7 @@ public class SupprimerPersonnage extends Activity implements INFCEcriture, INFC 
 
             Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
 
-            NdefMessage ndefMessage = createNdefMessage("X");
+            NdefMessage ndefMessage = createNdefMessage("");
 
             writeNdefMessage(tag, ndefMessage);
 
