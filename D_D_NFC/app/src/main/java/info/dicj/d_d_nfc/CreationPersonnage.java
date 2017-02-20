@@ -36,6 +36,7 @@ public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
         setContentView(R.layout.creation_personnage);
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        tglSexe = (ToggleButton)findViewById(R.id.tglSexe);
     }
 
     @Override
@@ -203,10 +204,9 @@ public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
         content += edTxtTaille.getText() + ",";
         edTxtPoids = (EditText)findViewById(R.id.edTxtPoids);
         content += edTxtPoids.getText() + ",";
+        content += tglSexe.getText() + ",";
         txtRaceClasse = (TextView)findViewById(R.id.edTxtRaceClasse);
         content += txtRaceClasse.getText() + ",";
-        tglSexe = (ToggleButton)findViewById(R.id.tglSexe);
-        content += tglSexe.getText() + ",";
         edTxtForce = (EditText)findViewById(R.id.edTxtForce);
         content += edTxtForce.getText() + ",";
         edTxtIntelligence = (EditText)findViewById(R.id.edTxtIntelligence);
@@ -223,28 +223,48 @@ public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
         content += edTxtCha.getText()+ ",";
 
         edTxtAttN1 = (EditText)findViewById(R.id.edTxtAttNom1);
+        content += edTxtAttN1.getText() + ",";
         edTxtAttN2 = (EditText)findViewById(R.id.edTxtAttNom2);
+        content += edTxtAttN2.getText() + ",";
         edTxtAttN3 = (EditText)findViewById(R.id.edTxtAttNom3);
+        content += edTxtAttN3.getText() + ",";
         edTxtAttN4 = (EditText)findViewById(R.id.edTxtAttNom4);
+        content += edTxtAttN4.getText() + ",";
         edTxtAttN5 = (EditText)findViewById(R.id.edTxtAttNom5);
+        content += edTxtAttN5.getText() + ",";
 
         edTxtAttA1 = (EditText)findViewById(R.id.edTxtAttAtt1);
+        content += edTxtAttA1.getText() + ",";
         edTxtAttA2 = (EditText)findViewById(R.id.edTxtAttAtt2);
+        content += edTxtAttA2.getText() + ",";
         edTxtAttA3 = (EditText)findViewById(R.id.edTxtAttAtt3);
+        content += edTxtAttA3.getText() + ",";
         edTxtAttA4 = (EditText)findViewById(R.id.edTxtAttAtt4);
+        content += edTxtAttA4.getText() + ",";
         edTxtAttA5 = (EditText)findViewById(R.id.edTxtAttAtt5);
+        content += edTxtAttA5.getText() + ",";
 
         edTxtAttD1 = (EditText)findViewById(R.id.edTxtAttDom1);
+        content += edTxtAttD1.getText() + ",";
         edTxtAttD2 = (EditText)findViewById(R.id.edTxtAttDom2);
+        content += edTxtAttD2.getText() + ",";
         edTxtAttD3 = (EditText)findViewById(R.id.edTxtAttDom3);
+        content += edTxtAttD3.getText() + ",";
         edTxtAttD4 = (EditText)findViewById(R.id.edTxtAttDom4);
+        content += edTxtAttD4.getText() + ",";
         edTxtAttD5 = (EditText)findViewById(R.id.edTxtAttDom5);
+        content += edTxtAttD5.getText() + ",";
 
         edTxtAttM1 = (EditText)findViewById(R.id.edTxtAttMun1);
+        content += edTxtAttM1.getText() + ",";
         edTxtAttM2 = (EditText)findViewById(R.id.edTxtAttMun2);
+        content += edTxtAttM2.getText() + ",";
         edTxtAttM3 = (EditText)findViewById(R.id.edTxtAttMun3);
+        content += edTxtAttM3.getText() + ",";
         edTxtAttM4 = (EditText)findViewById(R.id.edTxtAttMun4);
+        content += edTxtAttM4.getText() + ",";
         edTxtAttM5 = (EditText)findViewById(R.id.edTxtAttMun5);
+        content += edTxtAttM5.getText() + ",";
 
 
         return content;
