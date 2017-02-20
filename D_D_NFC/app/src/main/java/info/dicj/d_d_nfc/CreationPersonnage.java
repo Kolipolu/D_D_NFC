@@ -196,18 +196,31 @@ public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
         TextView txtRaceClasse;
 
         edTxtNom = (EditText)findViewById(R.id.edTextNom);
+        content = edTxtNom.getText() + ",";
         edTxtAge = (EditText)findViewById(R.id.edTxtAge);
+        content += edTxtAge.getText() + ",";
         edTxtTaille = (EditText)findViewById(R.id.edTxtTaille);
+        content += edTxtTaille.getText() + ",";
         edTxtPoids = (EditText)findViewById(R.id.edTxtPoids);
+        content += edTxtPoids.getText() + ",";
         txtRaceClasse = (TextView)findViewById(R.id.edTxtRaceClasse);
+        content += txtRaceClasse.getText() + ",";
         tglSexe = (ToggleButton)findViewById(R.id.tglSexe);
+        content += tglSexe.getText() + ",";
         edTxtForce = (EditText)findViewById(R.id.edTxtForce);
+        content += edTxtForce.getText() + ",";
         edTxtIntelligence = (EditText)findViewById(R.id.edTxtIntelligence);
+        content += edTxtIntelligence.getText() + ",";
         edTxtPV = (EditText)findViewById(R.id.edTxtPV);
+        content += edTxtPV.getText() + ",";
         edTxtDex = (EditText)findViewById(R.id.edTxtDexterite);
+        content += edTxtDex.getText() + ",";
         edTxtSag = (EditText)findViewById(R.id.edTxtSagesse);
+        content += edTxtSag.getText() + ",";
         edTxtCon = (EditText)findViewById(R.id.edTxtConstitution);
+        content += edTxtCon.getText() + ",";
         edTxtCha = (EditText)findViewById(R.id.edTxtCharisme);
+        content += edTxtCha.getText()+ ",";
 
         edTxtAttN1 = (EditText)findViewById(R.id.edTxtAttNom1);
         edTxtAttN2 = (EditText)findViewById(R.id.edTxtAttNom2);
@@ -233,8 +246,6 @@ public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
         edTxtAttM4 = (EditText)findViewById(R.id.edTxtAttMun4);
         edTxtAttM5 = (EditText)findViewById(R.id.edTxtAttMun5);
 
-
-        content = edTxtNom.getText() + "," + edTxtAge.getText() + "," + edTxtTaille.getText() + "," + edTxtPoids.getText() + "," + Sexe + "," + txtRaceClasse.getText();
 
         return content;
     }
