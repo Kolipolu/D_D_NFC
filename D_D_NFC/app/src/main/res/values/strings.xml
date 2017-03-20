@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">D_D_NFC</string>
+    <string name="race_classe">Race/Classe :</string>
+    <string name="poids">Poids :</string>
+    <string name="For">For :</string>
+    <string name="Int">Int :</string>
+    <string name="pv">PV :</string>
+    <string name="dex">Dex :</string>
+    <string name="sag">Sag :</string>
+    <string name="con">Con :</string>
+    <string name="cha">Cha :</string>
+    <string name="nom">Nom</string>
+    <string name="attaque">Attaque</string>
+    <string name="dommage">Dommage</string>
+    <string name="munition">Munition</string>
+    <string name="sexe">Sexe :</string>
+    <string name="taille">Taille :</string>
 </resources>

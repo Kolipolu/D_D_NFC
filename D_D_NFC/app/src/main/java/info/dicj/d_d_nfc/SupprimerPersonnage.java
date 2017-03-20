@@ -73,7 +73,7 @@ public class SupprimerPersonnage extends Activity implements INFCEcriture, INFC 
 
 
         if(intent.hasExtra(NfcAdapter.EXTRA_TAG)) {
-            Toast.makeText(this, "Suppression en cours...", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Suppression en cours...", Toast.LENGTH_SHORT).show();
 
 
             Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
@@ -113,14 +113,14 @@ public class SupprimerPersonnage extends Activity implements INFCEcriture, INFC 
             NdefFormatable ndefFormatable = NdefFormatable.get(tag);
 
             if(ndefFormatable == null){
-                Toast.makeText(this, "tag not formatable", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "La puce ne peut être écrite.", Toast.LENGTH_LONG).show();
             }
 
             ndefFormatable.connect();
             ndefFormatable.format(ndefMessage);
             ndefFormatable.close();
 
-            Toast.makeText(this, "Tag not writen", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "La puce n'a pas été écrite.", Toast.LENGTH_LONG).show();
 
         }catch(Exception e){
             Log.e("FormatTag", e.getMessage());
@@ -132,7 +132,7 @@ public class SupprimerPersonnage extends Activity implements INFCEcriture, INFC 
 
         try{
             if(tag == null){
-                Toast.makeText(this, "Tag ne peut êre null", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Tag ne peut êre nulle.", Toast.LENGTH_LONG).show();
                 return;
             }
 
@@ -144,7 +144,7 @@ public class SupprimerPersonnage extends Activity implements INFCEcriture, INFC 
                 ndef.connect();
 
                 if(!ndef.isWritable()){
-                    Toast.makeText(this, "Le tag ne peut être écrit", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "La puce ne peut être écrite.", Toast.LENGTH_LONG).show();
                     ndef.close();
                     return;
                 }

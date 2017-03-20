@@ -29,11 +29,27 @@ public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
     Boolean ecriture = false;
     String Sexe = "";
     ToggleButton tglSexe;
+    EditText edTxtNom, edTxtAge, edTxtTaille, edTxtPoids, edTxtForce, edTxtIntelligence, edTxtPV, edTxtDex, edTxtSag, edTxtCon, edTxtCha, edTxtLvl;
+    EditText edTxtAttN1, edTxtAttA1, edTxtAttD1, edTxtAttM1,edTxtAttN2, edTxtAttA2, edTxtAttD2, edTxtAttM2,edTxtAttN3, edTxtAttA3, edTxtAttD3, edTxtAttM3,edTxtAttN4, edTxtAttA4, edTxtAttD4, edTxtAttM4, edTxtAttN5, edTxtAttA5, edTxtAttD5, edTxtAttM5;
+    TextView txtRaceClasse;
+    TextView txtTitle;
+    Intent intentLire;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.creation_personnage);
+
+        initialiserVar();
+        intentLire = getIntent();
+
+        try{
+            if(intentLire.hasExtra("tableContent")){
+                txtTitle.setText("Modifier le personnage");
+                modifPerso(intentLire.getStringArrayExtra("tableContent"));
+            }
+        }catch(Exception e){}
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
         tglSexe = (ToggleButton)findViewById(R.id.tglSexe);
@@ -59,7 +75,7 @@ public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
 
         if(ecriture == true){
             if(intent.hasExtra(NfcAdapter.EXTRA_TAG)){
-                Toast.makeText(this, "Écriture en cours...", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Écriture en cours...", Toast.LENGTH_SHORT).show();
 
 
                 Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
@@ -104,14 +120,14 @@ public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
             NdefFormatable ndefFormatable = NdefFormatable.get(tag);
 
             if(ndefFormatable == null){
-                Toast.makeText(this, "tag not formatable", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "La puce ne peut être écrite.", Toast.LENGTH_LONG).show();
             }
 
             ndefFormatable.connect();
             ndefFormatable.format(ndefMessage);
             ndefFormatable.close();
 
-            Toast.makeText(this, "Tag not writen", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "La puce n'a pas été écrit.", Toast.LENGTH_LONG).show();
 
         }catch(Exception e){
             Log.e("FormatTag", e.getMessage());
@@ -123,7 +139,7 @@ public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
 
         try{
             if(tag == null){
-                Toast.makeText(this, "Tag cannot be null", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "La puce ne peut être nulle.", Toast.LENGTH_LONG).show();
                 return;
             }
 
@@ -135,7 +151,7 @@ public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
                 ndef.connect();
 
                 if(!ndef.isWritable()){
-                    Toast.makeText(this, "Tag not writable", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "La puce ne peut être écrite.", Toast.LENGTH_LONG).show();
                     ndef.close();
                     return;
                 }
@@ -190,83 +206,155 @@ public class CreationPersonnage extends Activity implements INFCEcriture, INFC{
         Toast.makeText(this, "Enregistrer le personnage sur la puce!", Toast.LENGTH_LONG).show();
     }
 
-    private String creationContentTag(){
-        String content;
-        EditText edTxtNom, edTxtAge, edTxtTaille, edTxtPoids, edTxtForce, edTxtIntelligence, edTxtPV, edTxtDex, edTxtSag, edTxtCon, edTxtCha;
-        EditText edTxtAttN1, edTxtAttA1, edTxtAttD1, edTxtAttM1,edTxtAttN2, edTxtAttA2, edTxtAttD2, edTxtAttM2,edTxtAttN3, edTxtAttA3, edTxtAttD3, edTxtAttM3,edTxtAttN4, edTxtAttA4, edTxtAttD4, edTxtAttM4, edTxtAttN5, edTxtAttA5, edTxtAttD5, edTxtAttM5;
-        TextView txtRaceClasse;
-
+    private void initialiserVar(){
         edTxtNom = (EditText)findViewById(R.id.edTextNom);
-        content = edTxtNom.getText() + ",";
         edTxtAge = (EditText)findViewById(R.id.edTxtAge);
-        content += edTxtAge.getText() + ",";
         edTxtTaille = (EditText)findViewById(R.id.edTxtTaille);
-        content += edTxtTaille.getText() + ",";
         edTxtPoids = (EditText)findViewById(R.id.edTxtPoids);
-        content += edTxtPoids.getText() + ",";
-        content += tglSexe.getText() + ",";
         txtRaceClasse = (TextView)findViewById(R.id.edTxtRaceClasse);
-        content += txtRaceClasse.getText() + ",";
         edTxtForce = (EditText)findViewById(R.id.edTxtForce);
-        content += edTxtForce.getText() + ",";
         edTxtIntelligence = (EditText)findViewById(R.id.edTxtIntelligence);
-        content += edTxtIntelligence.getText() + ",";
         edTxtPV = (EditText)findViewById(R.id.edTxtPV);
-        content += edTxtPV.getText() + ",";
         edTxtDex = (EditText)findViewById(R.id.edTxtDexterite);
-        content += edTxtDex.getText() + ",";
         edTxtSag = (EditText)findViewById(R.id.edTxtSagesse);
-        content += edTxtSag.getText() + ",";
         edTxtCon = (EditText)findViewById(R.id.edTxtConstitution);
-        content += edTxtCon.getText() + ",";
         edTxtCha = (EditText)findViewById(R.id.edTxtCharisme);
-        content += edTxtCha.getText()+ ",";
+
 
         edTxtAttN1 = (EditText)findViewById(R.id.edTxtAttNom1);
-        content += edTxtAttN1.getText() + ",";
         edTxtAttN2 = (EditText)findViewById(R.id.edTxtAttNom2);
-        content += edTxtAttN2.getText() + ",";
         edTxtAttN3 = (EditText)findViewById(R.id.edTxtAttNom3);
-        content += edTxtAttN3.getText() + ",";
         edTxtAttN4 = (EditText)findViewById(R.id.edTxtAttNom4);
-        content += edTxtAttN4.getText() + ",";
         edTxtAttN5 = (EditText)findViewById(R.id.edTxtAttNom5);
-        content += edTxtAttN5.getText() + ",";
 
         edTxtAttA1 = (EditText)findViewById(R.id.edTxtAttAtt1);
-        content += edTxtAttA1.getText() + ",";
         edTxtAttA2 = (EditText)findViewById(R.id.edTxtAttAtt2);
-        content += edTxtAttA2.getText() + ",";
         edTxtAttA3 = (EditText)findViewById(R.id.edTxtAttAtt3);
-        content += edTxtAttA3.getText() + ",";
         edTxtAttA4 = (EditText)findViewById(R.id.edTxtAttAtt4);
-        content += edTxtAttA4.getText() + ",";
         edTxtAttA5 = (EditText)findViewById(R.id.edTxtAttAtt5);
-        content += edTxtAttA5.getText() + ",";
 
         edTxtAttD1 = (EditText)findViewById(R.id.edTxtAttDom1);
-        content += edTxtAttD1.getText() + ",";
         edTxtAttD2 = (EditText)findViewById(R.id.edTxtAttDom2);
-        content += edTxtAttD2.getText() + ",";
         edTxtAttD3 = (EditText)findViewById(R.id.edTxtAttDom3);
-        content += edTxtAttD3.getText() + ",";
         edTxtAttD4 = (EditText)findViewById(R.id.edTxtAttDom4);
-        content += edTxtAttD4.getText() + ",";
         edTxtAttD5 = (EditText)findViewById(R.id.edTxtAttDom5);
-        content += edTxtAttD5.getText() + ",";
 
         edTxtAttM1 = (EditText)findViewById(R.id.edTxtAttMun1);
-        content += edTxtAttM1.getText() + ",";
         edTxtAttM2 = (EditText)findViewById(R.id.edTxtAttMun2);
-        content += edTxtAttM2.getText() + ",";
         edTxtAttM3 = (EditText)findViewById(R.id.edTxtAttMun3);
-        content += edTxtAttM3.getText() + ",";
         edTxtAttM4 = (EditText)findViewById(R.id.edTxtAttMun4);
-        content += edTxtAttM4.getText() + ",";
         edTxtAttM5 = (EditText)findViewById(R.id.edTxtAttMun5);
+
+        txtTitle = (TextView)findViewById(R.id.txtTitle);
+        edTxtLvl = (EditText)findViewById(R.id.txtLvl);
+    }
+
+    private void modifPerso(String[] tblContent){
+        edTxtNom.setText(tblContent[NumTag.Nom.ordinal()]);
+        edTxtAge.setText(tblContent[NumTag.Age.ordinal()]);
+        edTxtTaille.setText(tblContent[NumTag.Taille.ordinal()]);
+        edTxtPoids.setText(tblContent[NumTag.Poids.ordinal()]);
+        tglSexe.setText(tblContent[NumTag.Sexe.ordinal()]);
+        txtRaceClasse.setText(tblContent[NumTag.RaceClasse.ordinal()]);
+        edTxtForce.setText(tblContent[NumTag.For.ordinal()]);
+        edTxtIntelligence.setText(tblContent[NumTag.Int.ordinal()]);
+        edTxtPV.setText(tblContent[NumTag.PV.ordinal()]);
+        edTxtDex.setText(tblContent[NumTag.Dex.ordinal()]);
+        edTxtSag.setText(tblContent[NumTag.Sag.ordinal()]);
+        edTxtCon.setText(tblContent[NumTag.Con.ordinal()]);
+        edTxtCha.setText(tblContent[NumTag.Cha.ordinal()]);
+
+        edTxtAttN1.setText(tblContent[NumTag.NomAtt1.ordinal()]);
+        edTxtAttN2.setText(tblContent[NumTag.NomAtt2.ordinal()]);
+        edTxtAttN3.setText(tblContent[NumTag.NomAtt3.ordinal()]);
+        edTxtAttN4.setText(tblContent[NumTag.NomAtt4.ordinal()]);
+        edTxtAttN5.setText(tblContent[NumTag.NomAtt5.ordinal()]);
+
+        edTxtAttA1.setText(tblContent[NumTag.Att1.ordinal()]);
+        edTxtAttA2.setText(tblContent[NumTag.Att2.ordinal()]);
+        edTxtAttA3.setText(tblContent[NumTag.Att3.ordinal()]);
+        edTxtAttA4.setText(tblContent[NumTag.Att4.ordinal()]);
+        edTxtAttA5.setText(tblContent[NumTag.Att5.ordinal()]);
+
+        edTxtAttD1.setText(tblContent[NumTag.DomAtt1.ordinal()]);
+        edTxtAttD2.setText(tblContent[NumTag.DomAtt2.ordinal()]);
+        edTxtAttD3.setText(tblContent[NumTag.DomAtt3.ordinal()]);
+        edTxtAttD4.setText(tblContent[NumTag.DomAtt4.ordinal()]);
+        edTxtAttD5.setText(tblContent[NumTag.DomAtt5.ordinal()]);
+
+        edTxtAttM1.setText(tblContent[NumTag.MunAtt1.ordinal()]);
+        edTxtAttM2.setText(tblContent[NumTag.MunAtt2.ordinal()]);
+        edTxtAttM3.setText(tblContent[NumTag.MunAtt3.ordinal()]);
+        edTxtAttM4.setText(tblContent[NumTag.MunAtt4.ordinal()]);
+        edTxtAttM5.setText(tblContent[NumTag.MunAtt5.ordinal()]);
+
+        edTxtLvl.setText(tblContent[NumTag.Lvl.ordinal()]);
+    }
+
+    private String creationContentTag(){
+        String content;
+
+        content = edTxtNom.getText() + ",";
+        content += edTxtAge.getText() + ",";
+        content += edTxtTaille.getText() + ",";
+        content += edTxtPoids.getText() + ",";
+        content += tglSexe.getText() + ",";
+        content += txtRaceClasse.getText() + ",";
+        content += edTxtForce.getText() + ",";
+        content += edTxtIntelligence.getText() + ",";
+        content += edTxtPV.getText() + ",";
+        content += edTxtDex.getText() + ",";
+        content += edTxtSag.getText() + ",";
+        content += edTxtCon.getText() + ",";
+        content += edTxtCha.getText()+ ",";
+
+        content += edTxtAttN1.getText() + ",";
+        content += edTxtAttN2.getText() + ",";
+        content += edTxtAttN3.getText() + ",";
+        content += edTxtAttN4.getText() + ",";
+        content += edTxtAttN5.getText() + ",";
+
+        content += edTxtAttA1.getText() + ",";
+        content += edTxtAttA2.getText() + ",";
+        content += edTxtAttA3.getText() + ",";
+        content += edTxtAttA4.getText() + ",";
+        content += edTxtAttA5.getText() + ",";
+
+        content += edTxtAttD1.getText() + ",";
+        content += edTxtAttD2.getText() + ",";
+        content += edTxtAttD3.getText() + ",";
+        content += edTxtAttD4.getText() + ",";
+        content += edTxtAttD5.getText() + ",";
+
+        content += edTxtAttM1.getText() + ",";
+        content += edTxtAttM2.getText() + ",";
+        content += edTxtAttM3.getText() + ",";
+        content += edTxtAttM4.getText() + ",";
         content += edTxtAttM5.getText() + ",";
+
+        content += edTxtLvl.getText();
 
 
         return content;
+    }
+    private enum NumTag{
+        Nom,
+        Age,
+        Taille,
+        Poids,
+        Sexe,
+        RaceClasse,
+        For,
+        Int,
+        PV,
+        Dex,
+        Sag,
+        Con,
+        Cha,
+        NomAtt1, NomAtt2, NomAtt3, NomAtt4, NomAtt5,
+        Att1, Att2, Att3, Att4, Att5,
+        DomAtt1, DomAtt2, DomAtt3, DomAtt4, DomAtt5,
+        MunAtt1, MunAtt2, MunAtt3, MunAtt4, MunAtt5,
+        Lvl
     }
 }

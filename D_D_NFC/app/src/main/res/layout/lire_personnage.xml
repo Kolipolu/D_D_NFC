@@ -1,78 +1,414 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
     android:weightSum="1">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Fiche du personnage"
+            android:id="@+id/textView18"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Nom : "
+                android:id="@+id/txtNomPerso"
+                android:textColor="#ffffff"
+                android:inputType="number"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Âge :"
+                android:id="@+id/textView19"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/txtAgePerso"
+                android:layout_marginRight="10dp"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Sexe :"
+                android:id="@+id/txtSexePerso"
+                android:textColor="#ffffff"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Taille :"
+                android:id="@+id/txtTaillePerso"
+                android:textColor="#ffffff"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Poids :"
+                android:id="@+id/txtPoidsPerso"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Lvl :"
+                android:id="@+id/txtLvlPerso"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Race/Classe : "
+                android:id="@+id/txtRaceClassePerso"
+                android:textColor="#ffffff"
+                android:layout_marginTop="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="For :"
+                android:id="@+id/txtForcePerso"
+                android:textColor="#ffffff"
+                android:layout_marginRight="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Int :"
+                android:id="@+id/txtIntPerso"
+                android:textColor="#ffffff"
+                android:layout_marginRight="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="PV :"
+                android:id="@+id/txtPVPerso"
+                android:textColor="#ffffff"
+                android:layout_marginRight="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Dex :"
+                android:id="@+id/txtDexPerso"
+                android:textColor="#ffffff"
+                android:layout_marginRight="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Sag :"
+                android:id="@+id/txtSagPerso"
+                android:textColor="#ffffff"
+                android:layout_marginRight="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Con :"
+                android:id="@+id/txtConPerso"
+                android:textColor="#ffffff"
+                android:layout_marginRight="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Cha :"
+                android:id="@+id/txtChaPerso"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/nom"
+                    android:id="@+id/textView20"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/attaque"
+                    android:id="@+id/textView21"
+                    android:textColor="#ffffff"
+                    android:layout_marginLeft="60dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/dommage"
+                    android:id="@+id/textView22"
+                    android:textColor="#ffffff"
+                    android:layout_marginLeft="40dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/munition"
+                    android:id="@+id/textView23"
+                    android:textColor="#ffffff"
+                    android:layout_marginLeft="40dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtNomAttPerso1"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtAttAttPerso1"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtDomAttPerso1"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtMunAttPerso1"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtNomAttPerso2"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtAttAttPerso2"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtDomAttPerso2"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtMunAttPerso2"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtNomAttPerso3"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtAttAttPerso3"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtDomAttPerso3"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtMunAttPerso3"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtNomAttPerso4"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtAttAttPerso4"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtDomAttPerso4"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtMunAttPerso4"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtNomAttPerso5"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtAttAttPerso5"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtDomAttPerso5"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtMunAttPerso5"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Fiche du personnage"
-        android:id="@+id/textView18"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#ffffff"/>
+        android:text="Modifier le personnage"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:onClick="btnModifier_onClick"/>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Nom : "
-            android:id="@+id/txtNomPerso"
-            android:textColor="#ffffff"
-            android:inputType="number"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Âge :"
-            android:id="@+id/textView19"
-            android:textColor="#ffffff" />
-
-        <EditText
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtAgePerso"
-            android:layout_marginRight="10dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Sexe :"
-            android:id="@+id/txtSexePerso"
-            android:textColor="#ffffff"
-            android:layout_marginRight="10dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Taille :"
-            android:id="@+id/txtTaillePerso"
-            android:textColor="#ffffff"
-            android:layout_marginRight="10dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Poids :"
-            android:id="@+id/txtPoidsPerso"
-            android:textColor="#ffffff" />
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

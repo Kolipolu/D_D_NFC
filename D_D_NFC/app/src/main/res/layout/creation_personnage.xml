@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Création de personnages"
-        android:id="@+id/textView2"
+        android:text="Création de personnage"
+        android:id="@+id/txtTitle"
         android:textColor="#ffffff"
         android:layout_marginBottom="10dp"
         android:textAlignment="center"/>
@@ -73,7 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Sexe :"
+                    android:text="@string/sexe"
                     android:id="@+id/textView3"
                     android:textColor="#ffffff" />
 
@@ -89,7 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Taille :"
+                    android:text="@string/taille"
                     android:id="@+id/textView4"
                     android:textColor="#ffffff" />
 
@@ -104,7 +104,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Poids :"
+                    android:text="@string/poids"
                     android:id="@+id/textView5"
                     android:textColor="#ffffff" />
 
@@ -127,7 +127,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Race/Classe :"
+                    android:text="@string/race_classe"
                     android:id="@+id/txtRaceClasse"
                     android:textColor="#ffffff" />
 
@@ -151,7 +151,7 @@
                         android:layout_width="35dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="For :"
+                        android:text="@string/For"
                         android:id="@+id/textView6"
                         android:textColor="#ffffff" />
 
@@ -160,13 +160,14 @@
                         android:layout_height="40dp"
                         android:inputType="number"
                         android:ems="10"
-                        android:id="@+id/edTxtForce" />
+                        android:id="@+id/edTxtForce"
+                        android:maxLength="2"/>
 
                     <TextView
                         android:layout_width="35dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Int :"
+                        android:text="@string/Int"
                         android:id="@+id/textView9"
                         android:textColor="#ffffff"
                         android:layout_marginLeft="10dp"/>
@@ -176,13 +177,14 @@
                         android:layout_height="40dp"
                         android:inputType="number"
                         android:ems="10"
-                        android:id="@+id/edTxtIntelligence" />
+                        android:id="@+id/edTxtIntelligence"
+                        android:maxLength="2"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="PV :"
+                        android:text="@string/pv"
                         android:id="@+id/textView12"
                         android:textColor="#ffffff"
                         android:layout_marginLeft="10dp"/>
@@ -192,7 +194,25 @@
                         android:layout_height="40dp"
                         android:inputType="number"
                         android:ems="10"
-                        android:id="@+id/edTxtPV" />
+                        android:id="@+id/edTxtPV"
+                        android:maxLength="2"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Lvl :"
+                        android:id="@+id/textView2"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="10dp" />
+
+                    <EditText
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:inputType="number"
+                        android:ems="10"
+                        android:maxLength="2"
+                        android:id="@+id/txtLvl" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -204,7 +224,7 @@
                         android:layout_width="35dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Dex :"
+                        android:text="@string/dex"
                         android:id="@+id/textView7"
                         android:textColor="#ffffff" />
 
@@ -213,13 +233,14 @@
                         android:layout_height="40dp"
                         android:inputType="number"
                         android:ems="10"
-                        android:id="@+id/edTxtDexterite" />
+                        android:id="@+id/edTxtDexterite"
+                        android:maxLength="2"/>
 
                     <TextView
                         android:layout_width="35dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Sag :"
+                        android:text="@string/sag"
                         android:id="@+id/textView10"
                         android:textColor="#ffffff"
                         android:layout_marginLeft="10dp"/>
@@ -229,7 +250,8 @@
                         android:layout_height="40dp"
                         android:inputType="number"
                         android:ems="10"
-                        android:id="@+id/edTxtSagesse" />
+                        android:id="@+id/edTxtSagesse"
+                        android:maxLength="2"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -241,7 +263,7 @@
                         android:layout_width="35dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Con :"
+                        android:text="@string/con"
                         android:id="@+id/textView8"
                         android:textColor="#ffffff" />
 
@@ -250,13 +272,14 @@
                         android:layout_height="40dp"
                         android:inputType="number"
                         android:ems="10"
-                        android:id="@+id/edTxtConstitution" />
+                        android:id="@+id/edTxtConstitution"
+                        android:maxLength="2"/>
 
                     <TextView
                         android:layout_width="35dp"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Cha :"
+                        android:text="@string/cha"
                         android:id="@+id/textView11"
                         android:textColor="#ffffff"
                         android:layout_marginLeft="10dp"/>
@@ -266,7 +289,8 @@
                         android:layout_height="40dp"
                         android:inputType="number"
                         android:ems="10"
-                        android:id="@+id/edTxtCharisme" />
+                        android:id="@+id/edTxtCharisme"
+                        android:maxLength="2"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -285,7 +309,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Nom"
+                        android:text="@string/nom"
                         android:id="@+id/textView13"
                         android:textColor="#ffffff" />
 
@@ -293,7 +317,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Attaque"
+                        android:text="@string/attaque"
                         android:id="@+id/textView14"
                         android:textColor="#ffffff"
                         android:layout_marginLeft="60dp" />
@@ -302,7 +326,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Dommage"
+                        android:text="@string/dommage"
                         android:id="@+id/textView15"
                         android:textColor="#ffffff"
                         android:layout_marginLeft="40dp" />
@@ -311,7 +335,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Munition"
+                        android:text="@string/munition"
                         android:id="@+id/textView16"
                         android:textColor="#ffffff"
                         android:layout_marginLeft="40dp" />
