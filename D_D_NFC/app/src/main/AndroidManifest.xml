@@ -33,6 +33,10 @@
         <activity android:name=".LirePersonnage">
 
         </activity>
+
+        <activity android:name=".LirePNJ">
+
+        </activity>
     </application>
 
 </manifest>

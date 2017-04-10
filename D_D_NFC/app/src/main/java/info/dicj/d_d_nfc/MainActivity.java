@@ -33,6 +33,8 @@ public class MainActivity extends Activity {
 
     public void btnLirePNJ(View v){
 
+        Intent lirePNJ = new Intent(MainActivity.this, LirePNJ.class);
+        startActivity(lirePNJ);
     }
 
     public void btnLireMonstre(View v){

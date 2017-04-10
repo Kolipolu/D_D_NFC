@@ -67,7 +67,8 @@
             android:text="Lire un PNJ"
             android:id="@+id/btnLirePNJ"
             android:layout_marginTop="25dp"
-            android:backgroundTint="@android:color/holo_red_light" />
+            android:backgroundTint="@android:color/holo_red_light"
+            android:onClick="btnLirePNJ"/>
 
         <Button
             android:layout_width="match_parent"
@@ -76,6 +77,7 @@
             android:id="@+id/btnLireMonstre"
             android:layout_marginTop="25dp"
             android:backgroundTint="@android:color/holo_red_light" />
+
 
     </LinearLayout>
 </RelativeLayout>
