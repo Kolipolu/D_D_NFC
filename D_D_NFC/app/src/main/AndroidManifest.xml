@@ -37,6 +37,10 @@
         <activity android:name=".LirePNJ">
 
         </activity>
+
+        <activity android:name=".LireMonster">
+
+        </activity>
     </application>
 
 </manifest>

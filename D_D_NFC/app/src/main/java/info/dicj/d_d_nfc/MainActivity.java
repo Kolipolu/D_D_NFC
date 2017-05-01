@@ -7,10 +7,16 @@ import android.view.View;
 
 public class MainActivity extends Activity {
 
+    DatabaseHandler db = new DatabaseHandler(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if(DatabaseHandler.initaliser == false){
+            db.initialisation();
+        }
     }
 
     public void btnCreerPersonnageOnClick(View v){
@@ -39,5 +45,7 @@ public class MainActivity extends Activity {
 
     public void btnLireMonstre(View v){
 
+        Intent lireMonster = new Intent(MainActivity.this, LireMonster.class);
+        startActivity(lireMonster);
     }
 }

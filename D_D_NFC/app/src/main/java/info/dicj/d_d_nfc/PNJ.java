@@ -6,11 +6,11 @@ package info.dicj.d_d_nfc;
 public class PNJ {
 
     private int _id, _age;
-    private String _nom, _prenom, _classe, _race, _descrip, _quete;
+    private String _nom, _prenom, _classe, _race, _descrip;
 
     public PNJ(){}
 
-    public PNJ(int id, int age, String nom, String prenom, String classe, String race, String descrip, String quete){
+    public PNJ(int id, int age, String nom, String prenom, String classe, String race, String descrip){
         this._id = id;
         this._age = age;
         this._nom = nom;
@@ -18,17 +18,15 @@ public class PNJ {
         this._classe = classe;
         this._race = race;
         this._descrip = descrip;
-        this._quete = quete;
     }
 
-    public PNJ(int age, String nom, String prenom, String classe, String race, String descrip, String quete){
+    public PNJ(int age, String nom, String prenom, String classe, String race, String descrip){
         this._age = age;
         this._nom = nom;
         this._prenom = prenom;
         this._classe = classe;
         this._race = race;
         this._descrip = descrip;
-        this._quete = quete;
     }
 
     //ID
@@ -99,16 +97,6 @@ public class PNJ {
 
     public void set_descrip(String descrip){
         this._descrip = descrip;
-    }
-
-    //Quete
-
-    public String get_quete(){
-        return  this._quete;
-    }
-
-    public void set_quete(String quete){
-        this._quete = quete;
     }
 
 }

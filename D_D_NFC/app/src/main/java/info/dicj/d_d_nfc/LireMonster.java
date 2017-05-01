@@ -17,29 +17,31 @@ import android.widget.Toast;
 
 import java.io.UnsupportedEncodingException;
 
+/**
+ * Created by utilisateur on 2017-04-10.
+ */
+public class LireMonster extends Activity implements INFC, INFCLecture{
 
-public class LirePNJ extends Activity implements INFC, INFCLecture{
 
     NfcAdapter nfcAdapter;
+    TextView txtHealth, txtAttack, txtDefence, txtExp, txtGold, txtName, txtDescrip;
     DatabaseHandler db = new DatabaseHandler(this);
-    TextView txtPrenom, txtNom, txtAge, txtClasse, txtRace, txtDescrip, txtQuete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lire_pnj);
+        setContentView(R.layout.lire_monster);
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
 
-        txtPrenom = (TextView)findViewById(R.id.txtTestPrenom);
-        txtNom = (TextView)findViewById(R.id.txtTestNom);
-        txtAge = (TextView)findViewById(R.id.txtTestAge);
-        txtClasse = (TextView)findViewById(R.id.txtTestClasse);
-        txtRace = (TextView)findViewById(R.id.txtTestRace);
-        txtDescrip = (TextView)findViewById(R.id.txtTestDescription);
-        txtQuete = (TextView)findViewById(R.id.txtTestQuete);
+        txtName = (TextView)findViewById(R.id.txtNameM);
+        txtHealth = (TextView)findViewById(R.id.txtHealthM);
+        txtAttack = (TextView)findViewById(R.id.txtAttackM);
+        txtDefence = (TextView)findViewById(R.id.txtDefenseM);
+        txtGold = (TextView)findViewById(R.id.txtGoldM);
+        txtExp = (TextView)findViewById(R.id.txtExpM);
+        txtDescrip = (TextView)findViewById(R.id.txtDescripM);
     }
 
-    @Override
     public void disableForegroundDispatchSystem() {
 
         nfcAdapter.disableForegroundDispatch(this);
@@ -48,7 +50,7 @@ public class LirePNJ extends Activity implements INFC, INFCLecture{
     @Override
     public void enableForegroundDispatchSystem() {
 
-        Intent intent = new Intent(this, LirePNJ.class).addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
+        Intent intent = new Intent(this, LireMonster.class).addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
@@ -56,7 +58,7 @@ public class LirePNJ extends Activity implements INFC, INFCLecture{
 
         nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilters, null);
 
-        Toast.makeText(this, "Veuillez lire la puce personnage!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Veuillez lire la puce monstre!", Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -91,7 +93,7 @@ public class LirePNJ extends Activity implements INFC, INFCLecture{
 
             readTextFromMessage((NdefMessage)parcelables[0]);
         }else{
-            Toast.makeText(this, "The NFC is empty.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "La puce est vide.", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -107,21 +109,18 @@ public class LirePNJ extends Activity implements INFC, INFCLecture{
             String tagContent = getTextFromNdefRecord(ndefRecord);
 
             try{
+                Monster monster;
 
-                PNJ pnj;
+                monster = db.getMonster(Integer.parseInt(tagContent));
 
-                pnj = db.getPNJ(Integer.parseInt(tagContent));
-
-                txtPrenom.setText(pnj.get_prenom());
-                txtNom.setText(pnj.get_nom());
-                txtAge.setText(String.valueOf(pnj.get_age()));
-                txtClasse.setText(pnj.get_classe());
-                txtRace.setText(pnj.get_race());
-                txtDescrip.setText(pnj.get_descrip());
-
-            }catch(Exception e){
-
-            }
+                txtName.setText(monster.get_name());
+                txtHealth.setText(monster.get_health());
+                txtAttack.setText(monster.get_attack());
+                txtDefence.setText(monster.get_def());
+                txtExp.setText(monster.get_exp());
+                txtGold.setText(monster.get_gold());
+                txtDescrip.setText(monster.get_descrip());
+            }catch(Exception e){}
 
         }else{
             Toast.makeText(this, "La puce est vide.", Toast.LENGTH_LONG).show();

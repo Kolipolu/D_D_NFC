@@ -76,7 +76,8 @@
             android:text="Lire un monstre"
             android:id="@+id/btnLireMonstre"
             android:layout_marginTop="25dp"
-            android:backgroundTint="@android:color/holo_red_light" />
+            android:backgroundTint="@android:color/holo_red_light"
+            android:onClick="btnLireMonstre"/>
 
 
     </LinearLayout>
