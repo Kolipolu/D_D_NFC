@@ -15,4 +15,26 @@
     <string name="munition">Munition</string>
     <string name="sexe">Sexe :</string>
     <string name="taille">Taille :</string>
+    <string name="lire_un_monstre">Lire un monstre</string>
+    <string name="nom2">Nom :</string>
+    <string name="lecture_d_apos_un_pnj">Lecture d\'un PNJ</string>
+    <string name="prenom">Prenom :</string>
+    <string name="age">Âge :</string>
+    <string name="classe">Classe :</string>
+    <string name="race">Race :</string>
+    <string name="description">Description :</string>
+    <string name="hp">Hp :</string>
+    <string name="points_d_apos_attaque">Points d\'attaque :</string>
+    <string name="points_de_defense">Points de defense :</string>
+    <string name="exp">Exp. :</string>
+    <string name="pi_ces_d_apos_or">Pièces d\'or :</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="suppression_d_apos_un_personnage">Suppression d\'un personnage</string>
+    <string name="fiche_du_personnage">Fiche du personnage</string>
+    <string name="lvl">Lvl :</string>
+    <string name="modifier_le_personnage">Modifier le personnage</string>
+    <string name="lire_un_personnage">Lire un personnage</string>
+    <string name="cr_er_un_personnage">Créer un personnage</string>
+    <string name="enregister_le_personnage">Enregister le personnage</string>
+    <string name="nom_personnage">Nom personnage :</string>
 </resources>

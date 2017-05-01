@@ -15,21 +15,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Fiche du personnage"
+            android:text="@string/fiche_du_personnage"
             android:id="@+id/textView18"
             android:layout_gravity="center_horizontal"
-            android:textColor="#ffffff"/>
+            android:textColor="#ffffff"
+            android:textSize="35dp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Nom : "
+                android:text="@string/nom2"
                 android:id="@+id/txtNomPerso"
                 android:textColor="#ffffff"
                 android:inputType="number"/>
@@ -39,13 +43,14 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Âge :"
+                android:text="@string/age"
                 android:id="@+id/textView19"
                 android:textColor="#ffffff" />
 
@@ -61,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Sexe :"
+                android:text="@string/sexe"
                 android:id="@+id/txtSexePerso"
                 android:textColor="#ffffff"
                 android:layout_marginRight="10dp" />
@@ -70,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Taille :"
+                android:text="@string/taille"
                 android:id="@+id/txtTaillePerso"
                 android:textColor="#ffffff"
                 android:layout_marginRight="10dp" />
@@ -79,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Poids :"
+                android:text="@string/poids"
                 android:id="@+id/txtPoidsPerso"
                 android:textColor="#ffffff" />
 
@@ -87,7 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Lvl :"
+                android:text="@string/lvl"
                 android:id="@+id/txtLvlPerso"
                 android:textColor="#ffffff"
                 android:layout_marginLeft="10dp" />
@@ -96,13 +101,14 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Race/Classe : "
+                android:text="@string/race_classe"
                 android:id="@+id/txtRaceClassePerso"
                 android:textColor="#ffffff"
                 android:layout_marginTop="5dp" />
@@ -113,13 +119,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="For :"
+                android:text="@string/For"
                 android:id="@+id/txtForcePerso"
                 android:textColor="#ffffff"
                 android:layout_marginRight="4dp" />
@@ -128,7 +134,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Int :"
+                android:text="@string/Int"
                 android:id="@+id/txtIntPerso"
                 android:textColor="#ffffff"
                 android:layout_marginRight="4dp" />
@@ -137,7 +143,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="PV :"
+                android:text="@string/pv"
                 android:id="@+id/txtPVPerso"
                 android:textColor="#ffffff"
                 android:layout_marginRight="4dp" />
@@ -146,7 +152,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Dex :"
+                android:text="@string/dex"
                 android:id="@+id/txtDexPerso"
                 android:textColor="#ffffff"
                 android:layout_marginRight="4dp" />
@@ -155,7 +161,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Sag :"
+                android:text="@string/sag"
                 android:id="@+id/txtSagPerso"
                 android:textColor="#ffffff"
                 android:layout_marginRight="4dp" />
@@ -164,7 +170,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Con :"
+                android:text="@string/con"
                 android:id="@+id/txtConPerso"
                 android:textColor="#ffffff"
                 android:layout_marginRight="4dp" />
@@ -173,7 +179,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Cha :"
+                android:text="@string/cha"
                 android:id="@+id/txtChaPerso"
                 android:textColor="#ffffff" />
         </LinearLayout>
@@ -406,7 +412,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Modifier le personnage"
+        android:text="@string/modifier_le_personnage"
         android:id="@+id/button"
         android:layout_alignParentBottom="true"
         android:onClick="btnModifier_onClick"/>

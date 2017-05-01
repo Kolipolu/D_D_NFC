@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">D_D_NFC</string>
+    <string name="munition">Ammo</string>
+    <string name="nom">Name</string>
+    <string name="nom2">Name :</string>
+    <string name="pi_ces_d_apos_or">Gold : </string>
+    <string name="poids">Weight :</string>
+    <string name="points_d_apos_attaque">Attack points : </string>
+    <string name="points_de_defense">Defense points :</string>
+    <string name="prenom">First name : </string>
+    <string name="pv">HP : </string>
+    <string name="race">Race</string>
+    <string name="race_classe">Race/Class :</string>
+    <string name="sag">Wisd :</string>
+    <string name="sexe">Gender :</string>
+    <string name="taille">Height :</string>
+    <string name="For">For :</string>
+    <string name="Int">Int :</string>
+    <string name="age">Age :</string>
+    <string name="attaque">Attack</string>
+    <string name="cha">Cha :</string>
+    <string name="classe">Class :</string>
+    <string name="con">Con :</string>
+    <string name="description">Description :</string>
+    <string name="dex">Dex :</string>
+    <string name="dommage">Damage :</string>
+    <string name="exp">Exp. :</string>
+    <string name="hp">HP :</string>
+    <string name="lecture_d_apos_un_pnj">PNJ reader</string>
+    <string name="lire_un_monstre">Monster reader</string>
+    <string name="supprimer">Delete</string>
+    <string name="suppression_d_apos_un_personnage">Delete a player</string>
+    <string name="modifier_le_personnage">Player update</string>
+    <string name="fiche_du_personnage">Player sheet</string>
+    <string name="cr_er_un_personnage">Create a player</string>
+    <string name="lvl">Lvl :</string>
+    <string name="lire_un_personnage">Read a player</string>
+    <string name="enregister_le_personnage">Save the player</string>
+    <string name="nom_personnage">Player name :</string>
+</resources>

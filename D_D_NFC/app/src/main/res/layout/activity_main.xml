@@ -37,7 +37,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Créer un personnage"
+            android:text="@string/cr_er_un_personnage"
             android:id="@+id/btnCreerPersonnage"
             android:layout_marginTop="25dp"
             android:backgroundTint="@android:color/holo_red_light"
@@ -46,7 +46,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lire un personnage"
+            android:text="@string/lire_un_personnage"
             android:id="@+id/btnLirePersonnage"
             android:layout_marginTop="25dp"
             android:backgroundTint="@android:color/holo_red_light"
@@ -55,7 +55,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Supprimer un personnage"
+            android:text="@string/suppression_d_apos_un_personnage"
             android:id="@+id/btnSupprimerPersonnage"
             android:layout_marginTop="25dp"
             android:backgroundTint="@android:color/holo_red_light"
@@ -64,7 +64,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lire un PNJ"
+            android:text="@string/lecture_d_apos_un_pnj"
             android:id="@+id/btnLirePNJ"
             android:layout_marginTop="25dp"
             android:backgroundTint="@android:color/holo_red_light"
@@ -73,7 +73,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lire un monstre"
+            android:text="@string/lire_un_monstre"
             android:id="@+id/btnLireMonstre"
             android:layout_marginTop="25dp"
             android:backgroundTint="@android:color/holo_red_light"

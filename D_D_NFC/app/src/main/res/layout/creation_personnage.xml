@@ -10,11 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Création de personnage"
+        android:text="@string/cr_er_un_personnage"
         android:id="@+id/txtTitle"
         android:textColor="#ffffff"
         android:layout_marginBottom="10dp"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -36,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Nom personnage :"
+                    android:text="@string/nom_personnage"
                     android:id="@+id/txtNom"
                     android:textColor="#ffffff" />
 
@@ -57,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Âge :"
+                    android:text="@string/age"
                     android:id="@+id/textView"
                     android:textColor="#ffffff" />
 
@@ -201,7 +202,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Lvl :"
+                        android:text="@string/lvl"
                         android:id="@+id/textView2"
                         android:textColor="#ffffff"
                         android:layout_marginLeft="10dp" />
@@ -514,7 +515,7 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Enregister le personnage"
+                    android:text="@string/enregister_le_personnage"
                     android:id="@+id/btnSavePerso"
                     android:layout_marginTop="10dp"
                     android:onClick="btnSavePersoOnClick"/>

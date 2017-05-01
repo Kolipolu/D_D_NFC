@@ -113,13 +113,13 @@ public class LireMonster extends Activity implements INFC, INFCLecture{
 
                 monster = db.getMonster(Integer.parseInt(tagContent));
 
-                txtName.setText(monster.get_name());
-                txtHealth.setText(monster.get_health());
-                txtAttack.setText(monster.get_attack());
-                txtDefence.setText(monster.get_def());
-                txtExp.setText(monster.get_exp());
-                txtGold.setText(monster.get_gold());
-                txtDescrip.setText(monster.get_descrip());
+                txtName.setText("Nom : " + monster.get_name());
+                txtHealth.setText("HP : " + monster.get_health());
+                txtAttack.setText("Points d'attaque : " + monster.get_attack());
+                txtDefence.setText("Points de defense : " + monster.get_def());
+                txtExp.setText("Exp. : " + monster.get_exp());
+                txtGold.setText("Pièces d'or : " + monster.get_gold());
+                txtDescrip.setText("Description : " + monster.get_descrip());
             }catch(Exception e){}
 
         }else{

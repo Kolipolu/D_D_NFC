@@ -8,55 +8,73 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
+        android:text="@string/lire_un_monstre"
+        android:id="@+id/textView25"
+        android:textColor="#ffffff"
+        android:layout_gravity="center_horizontal"
+        android:textSize="45dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/nom2"
         android:id="@+id/txtNameM"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_marginBottom="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
+        android:text="@string/hp"
         android:id="@+id/txtHealthM"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_marginBottom="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
+        android:text="@string/points_d_apos_attaque"
         android:id="@+id/txtAttackM"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_marginBottom="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
+        android:text="@string/points_de_defense"
         android:id="@+id/txtDefenseM"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_marginBottom="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
+        android:text="@string/exp"
         android:id="@+id/txtExpM"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_marginBottom="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
+        android:text="@string/pi_ces_d_apos_or"
         android:id="@+id/txtGoldM"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_marginBottom="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
+        android:text="@string/description"
         android:id="@+id/txtDescripM"
         android:textColor="#ffffff" />
 </LinearLayout>

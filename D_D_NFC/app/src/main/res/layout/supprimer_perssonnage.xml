@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="#000000"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageView"
+        android:layout_weight="0.04"
+        android:background="@drawable/mort"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Suppression d&apos;un personnage"
+        android:text="@string/suppression_d_apos_un_personnage"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:id="@+id/textView17"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#ffffff" />
+
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="25dp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Supprimer"
+        android:text="@string/supprimer"
         android:id="@+id/btnSupprimerPerso"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="500dp"
-        android:onClick="btnSupprimerPersoOnClick"/>
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:onClick="btnSupprimerPersoOnClick"
+        android:textSize="20dp" />
+
+</RelativeLayout>

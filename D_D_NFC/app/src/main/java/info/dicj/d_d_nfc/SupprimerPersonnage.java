@@ -50,14 +50,19 @@ public class SupprimerPersonnage extends Activity implements INFCEcriture, INFC 
         builder.setNegativeButton("Non", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
-
+                messageToast();
                 dialog.dismiss();
             }
         });
 
         AlertDialog alert = builder.create();
         alert.show();
+
+
+    }
+
+    private void messageToast(){
+        Toast.makeText(this, "Je savais que tu ne me turais pas.", Toast.LENGTH_SHORT).show();
     }
 
     @Override

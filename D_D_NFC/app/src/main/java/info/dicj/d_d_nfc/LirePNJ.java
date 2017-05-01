@@ -22,7 +22,7 @@ public class LirePNJ extends Activity implements INFC, INFCLecture{
 
     NfcAdapter nfcAdapter;
     DatabaseHandler db = new DatabaseHandler(this);
-    TextView txtPrenom, txtNom, txtAge, txtClasse, txtRace, txtDescrip, txtQuete;
+    TextView txtPrenom, txtNom, txtAge, txtClasse, txtRace, txtDescrip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,6 @@ public class LirePNJ extends Activity implements INFC, INFCLecture{
         txtClasse = (TextView)findViewById(R.id.txtTestClasse);
         txtRace = (TextView)findViewById(R.id.txtTestRace);
         txtDescrip = (TextView)findViewById(R.id.txtTestDescription);
-        txtQuete = (TextView)findViewById(R.id.txtTestQuete);
     }
 
     @Override
@@ -112,12 +111,12 @@ public class LirePNJ extends Activity implements INFC, INFCLecture{
 
                 pnj = db.getPNJ(Integer.parseInt(tagContent));
 
-                txtPrenom.setText(pnj.get_prenom());
-                txtNom.setText(pnj.get_nom());
-                txtAge.setText(String.valueOf(pnj.get_age()));
-                txtClasse.setText(pnj.get_classe());
-                txtRace.setText(pnj.get_race());
-                txtDescrip.setText(pnj.get_descrip());
+                txtPrenom.setText("Prenom : " + pnj.get_prenom());
+                txtNom.setText("Nom : " + pnj.get_nom());
+                txtAge.setText("Âge : " + String.valueOf(pnj.get_age()));
+                txtClasse.setText("Classe : " + pnj.get_classe());
+                txtRace.setText("Race : " + pnj.get_race());
+                txtDescrip.setText("Description : " + pnj.get_descrip());
 
             }catch(Exception e){
 
