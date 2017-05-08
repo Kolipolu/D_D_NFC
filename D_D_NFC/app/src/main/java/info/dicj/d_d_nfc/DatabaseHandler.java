@@ -192,7 +192,6 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_PNJ, new String[]{KEY_ID, KEY_NOM, KEY_PRENOM, KEY_AGE, KEY_CLASSE, KEY_RACE, KEY_DESC}, KEY_ID + " = ?", new String[]{String.valueOf(id)},null,null,null,null);
-
         if(cursor != null){
             cursor.moveToFirst();
         }
@@ -219,13 +218,13 @@ public class DatabaseHandler extends SQLiteOpenHelper{
     public Monster getMonster(int id){
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_MONSTER, new String[]{KEY_IDM, KEY_HEALTH, KEY_ATTACK, KEY_DEFENCE, KEY_EXPM, KEY_GOLDM, KEY_NAME, KEY_DESCM, KEY_LOOT}, KEY_ID + " = " + id, new String[]{String.valueOf(id)}, null, null, null, null);
+        Cursor cursor = db.query(TABLE_MONSTER, new String[]{KEY_IDM, KEY_HEALTH, KEY_ATTACK, KEY_DEFENCE, KEY_EXPM, KEY_GOLDM, KEY_NAME, KEY_DESCM, KEY_LOOT}, KEY_ID + " = ?", new String[]{String.valueOf(id)}, null, null, null, null);
 
         if(cursor != null){
             cursor.moveToFirst();
         }
 
-        String[] loot = null;
+        String[] loot = new String[]{"epee", "lance"};
 
         try{
         loot = cursor.getString(8).split(",");

@@ -90,7 +90,7 @@ public class LirePNJ extends Activity implements INFC, INFCLecture{
 
             readTextFromMessage((NdefMessage)parcelables[0]);
         }else{
-            Toast.makeText(this, "The NFC is empty.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "La puce monstre est vide...", Toast.LENGTH_LONG).show();
         }
     }
 
